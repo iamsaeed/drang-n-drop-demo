@@ -20,5 +20,5 @@
 - Migrate & seed database
 
 ### Demo Link
-https://democms.hellow.in/
+https://dragndrop.tooeasy.in/
 
