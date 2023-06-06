@@ -1,0 +1,380 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+
+    /*Index
+    1. Body
+    2. Headers
+    2. Paragraph
+    3. span
+    4. label
+    5. input
+    6. Button
+    7. Cards
+    8. Tooltip
+    9. Transition
+    10. Table
+    11. Customs classes
+
+    Index*/
+
+    body { @apply font-montserrat bg-gray-100 text-gray-500 text-sm dark:bg-gray-800; }
+
+    a { @apply text-primary; }
+
+    span { @apply dark:text-light; }
+
+    a:active, .router-link-active {
+        @apply bg-primary-active text-white
+    }
+
+    hr {
+        @apply dark:border-gray-500
+    }
+    /*input */
+
+    input, input[type='text'], input[type='number'], input[type='date'],input[type='time'],
+    input[type='datetime-local'], input[type='month'],input[type='url'] ,input[type='password'],
+    input[type='file'], textarea, input[type='email'], select {
+        @apply dark:bg-gray-700 dark:border-gray-500 dark:text-light
+    }
+
+    input::placeholder {
+        @apply dark:text-gray-500
+    }
+
+    /*Headers*/
+    h1 {
+        @apply dark:text-light;
+        font-size: 24px;
+        line-height: 34px;
+        color: #5E5873;
+    }
+
+    h2 {
+        @apply dark:text-light;
+        font-size: 21px;
+        line-height: 29px;
+        color: #5E5873;
+    }
+    h3 {
+        @apply dark:text-light;
+        font-size: 18px;
+        line-height: 26px;
+        color: #5E5873;
+    }
+    h4 {
+        @apply dark:text-light;
+        font-size: 15px;
+        line-height: 22px;
+        color: #5E5873;
+    }
+    h5 {
+        @apply dark:text-light;
+        font-size: 14px;
+        line-height: 24px;
+        color: #5E5873;
+    }
+    h6 {
+        @apply dark:text-light;
+        font-size: 13px;
+        line-height: 23px;
+        color: #5E5873;
+    }
+
+    p {
+        @apply font-normal dark:text-light;
+        font-size: 12px;
+        line-height: 21px;
+        color: #6E6B7B;
+    }
+    span {
+        @apply font-normal;
+        font-size: 12px;
+        line-height: 18px;
+        color: #6E6B7B;
+        margin-bottom:5px;
+    }
+
+    /*Label*/
+    label{
+        @apply text-xs;
+    }
+
+    .form-group {
+        @apply m-1
+    }
+
+    .form-control{
+        @apply w-full p-2 focus:outline-none border border-gray-300 bg-gray-100 text-sm
+    }
+
+    .form-control:focus, .form-control-sm:focus {
+        @apply border-primary
+    }
+
+    .form-control-sm{
+        @apply w-full p-1 focus:outline-none border border-gray-300 bg-gray-100
+    }
+
+    .btn {
+        @apply items-center px-2 py-2 border shadow-sm text-sm text-center
+    }
+
+    .btn-block {
+        @apply w-full
+    }
+
+    .btn-primary {
+        @apply bg-indigo-600 hover:bg-indigo-700 focus:outline-none border-transparent text-white
+    }
+    .btn-secondary {
+        @apply bg-secondary hover:bg-secondary-active focus:outline-none border-transparent text-white
+    }
+    .btn-success {
+        @apply bg-success hover:bg-success-active focus:outline-none border-transparent text-white
+    }
+    .btn-danger {
+        @apply bg-danger hover:bg-danger-active focus:outline-none border-transparent text-white
+    }
+    .btn-warning {
+        @apply bg-warning hover:bg-warning-active focus:outline-none border-transparent text-white
+    }
+    .btn-info {
+        @apply bg-info hover:bg-info-active focus:outline-none border-transparent text-white
+    }
+    .btn-dark {
+        @apply bg-dark hover:bg-dark-active focus:outline-none border-transparent text-white
+    }
+    .btn-dropdown {
+        @apply text-gray-700 block px-4 py-2 text-sm
+    }
+    .default-pagination {
+        @apply border-transparent text-center rounded-full  px-4 inline-flex items-center text-sm p-1
+    }
+
+    /*Cards*/
+    .card {
+        @apply border-0 p-2 rounded bg-white dark:bg-gray-600 dark:text-light;
+        box-shadow: 0 4px 24px 0 rgb(34 41 47 / 10%);
+    }
+
+    /*Vue Select*/
+    :root {
+        --vs-colors--lightest: rgba(60, 60, 60, 0.26);
+        --vs-colors--light: rgba(60, 60, 60, 0.5);
+        --vs-colors--dark: #333;
+        --vs-colors--darkest: rgba(0, 0, 0, 0.15);
+
+        /* Search Input */
+        --vs-search-input-color: inherit;
+        --vs-search-input-placeholder-color: inherit;
+
+        /* Font */
+        --vs-font-size: 1rem;
+        --vs-line-height: 2.0;
+
+        /* Disabled State */
+        --vs-state-disabled-bg: rgb(248, 248, 248);
+        --vs-state-disabled-color: var(--vs-colors--light);
+        --vs-state-disabled-controls-color: var(--vs-colors--light);
+        --vs-state-disabled-cursor: not-allowed;
+
+        /* Borders */
+        --vs-border-color: var(--vs-colors--lightest);
+        --vs-border-width: 1px;
+        --vs-border-style: solid;
+        --vs-border-radius: 0;
+
+        /* Actions: house the component controls */
+        --vs-actions-padding: 4px 6px 0 3px;
+
+        /* Component Controls: Clear, Open Indicator */
+        --vs-controls-color: var(--vs-colors--light);
+        --vs-controls-size: 1;
+        --vs-controls--deselect-text-shadow: 0 1px 0 #fff;
+
+        /* Selected */
+        --vs-selected-bg: #f0f0f0;
+        --vs-selected-color: var(--vs-colors--dark);
+        --vs-selected-border-color: var(--vs-border-color);
+        --vs-selected-border-style: var(--vs-border-style);
+        --vs-selected-border-width: var(--vs-border-width);
+
+        /* Dropdown */
+        --vs-dropdown-bg: #fff;
+        --vs-dropdown-color: inherit;
+        --vs-dropdown-z-index: 1000;
+        --vs-dropdown-min-width: 160px;
+        --vs-dropdown-max-height: 350px;
+        --vs-dropdown-box-shadow: 0px 3px 6px 0px var(--vs-colors--darkest);
+
+        /* Options */
+        --vs-dropdown-option-bg: #000;
+        --vs-dropdown-option-color: var(--vs-dropdown-color);
+        --vs-dropdown-option-padding: 3px 20px;
+
+        /* Active State */
+        --vs-dropdown-option--active-bg: #5897fb;
+        --vs-dropdown-option--active-color: #fff;
+
+        /* Deselect State */
+        --vs-dropdown-option--deselect-bg: #fb5858;
+        --vs-dropdown-option--deselect-color: #fff;
+
+        /* Transitions */
+        --vs-transition-timing-function: cubic-bezier(1, -0.115, 0.975, 0.855);
+        --vs-transition-duration: 150ms;
+    }
+
+
+    /*Tooltip*/
+    .tooltip {
+        position: relative;
+        display: flex;
+    }
+    .tooltip .tooltiptext{
+        visibility: hidden;
+        width: -moz-max-content;
+        width: max-content;
+        font-size: x-small;
+        background-color: black;
+        color: #fff;
+        text-align: center;
+        margin: 0 auto 10px;
+        border-radius: 6px;
+        padding: 4px 10px;
+        opacity: 0;
+        transition: opacity 1s;
+    }
+
+    .tooltip:hover .tooltiptext{
+        visibility: visible;
+        opacity: 1;
+    }
+    /*Tooltip top*/
+    .tooltip-top{
+        position: absolute;
+        z-index: 1;
+        bottom: 110%;
+    }
+    .tooltip .tooltip-top::after {
+        content: "";
+        position: absolute;
+        top: 100%;
+        left: 50%;
+        margin-left: -5px;
+        border-width: 5px;
+        border-style: solid;
+        text-align: center!important;
+        border-color: black transparent transparent transparent;
+    }
+
+    /*Tooltip bottom*/
+    .tooltip-bottom{
+        position: absolute;
+        z-index: 1;
+        top: 120%;
+    }
+    .tooltip .tooltip-bottom::after {
+        content: "";
+        position: absolute;
+        bottom: 100%;
+        left: 50%;
+        margin-left: -5px;
+        border-width: 5px;
+        border-style: solid;
+        text-align: center!important;
+        border-color: transparent transparent black transparent;
+    }
+
+    /*tooltip Left*/
+    .tooltip-left{
+        position: absolute;
+        z-index: 1;
+        top: -5px;
+        right: 80%;
+    }
+    .tooltip .tooltip-left::after {
+        content: "";
+        position: absolute;
+        top: 50%;
+        left: 100%;
+        margin-top: -5px;
+        border-width: 5px;
+        border-style: solid;
+        border-color: transparent transparent transparent black;
+    }
+
+    /*tooltip Right*/
+    .tooltip-right{
+        position: absolute;
+        z-index: 1;
+        top: -5px;
+        left: 80%;
+    }
+    .tooltip .tooltip-right::after {
+        content: "";
+        position: absolute;
+        top: 50%;
+        right: 100%;
+        margin-top: -5px;
+        border-width: 5px;
+        border-style: solid;
+        border-color: transparent black transparent transparent;
+    }
+
+    /* transition*/
+    /* fade */
+    .fade-enter-active,
+    .fade-leave-active {
+        transition: opacity 5s ease;
+    }
+
+    .fade-enter-from,
+    .fade-leave-to {
+        opacity: 0;
+    }
+
+    /*  slide-fade  */
+    .slide-fade-enter-active {
+        transition: all 5s ease-out;
+    }
+
+    .slide-fade-leave-active {
+        transition: all 5s cubic-bezier(1, 0.5, 0.8, 1);
+    }
+
+    .slide-fade-enter-from,
+    .slide-fade-leave-to {
+        transform: translateX(20px);
+        opacity: 0;
+    }
+
+    /*Table*/
+
+    tbody, tr {
+        @apply dark:bg-gray-600 dark:text-light
+    }
+
+    thead {
+        @apply bg-gray-50 dark:bg-gray-600 dark:text-light
+    }
+
+    table {
+        @apply dark:bg-gray-600 dark:text-light min-w-full divide-y divide-gray-200 border dark:border dark:border-gray-700 dark:divide-gray-700
+    }
+
+    th {
+        @apply dark:bg-gray-700 dark:text-light font-bold px-6 py-3 text-left text-xs text-gray-500 uppercase tracking-wider
+    }
+
+    td {
+        @apply dark:bg-gray-600 dark:text-light px-6 py-4 whitespace-nowrap text-sm text-gray-900 w-1/2
+    }
+
+    /*Customs classes*/
+
+}
