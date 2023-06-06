@@ -6,7 +6,7 @@ const router = createRouter({
   routes: [
     { path: '/', component: () => import('../layouts/AuthLayout.vue'), children : [
         { path: '', name: 'login', component: () => import('../views/Auth/Login.vue') },
-        { path: '/register', name: 'register', component: () => import('../views/Auth/Register.vue') },
+        { path: '/register', name: 'register', component: () => import('../views/Auth/Register.vue') }
     ], meta : { auth : false }},
 
     { path: '/', component: () => import('../layouts/NewLayout.vue'), children : [
